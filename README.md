@@ -38,24 +38,24 @@ flowchart LR
     BME["🧭 HW-611 (BMP280)"]:::module
 
     %% Battery Connections
-    BATT -- "Red Wire (+)" -->|BAT+| FC75
-    BATT -- "Black Wire (-)" -->|BAT-| FC75
+    BATT -- "Red Wire (+) to BAT+" --> FC75
+    BATT -- "Black Wire (-) to BAT-" --> FC75
 
     %% Charger to ESP32 Power
-    FC75 == "Power (+)" ==>|5V Pin| ESP
-    FC75 == "Ground (-)" ==>|GND Pin| ESP
+    FC75 == "Power (+) to 5V" ==> ESP
+    FC75 == "Ground (-) to GND" ==> ESP
 
     %% ESP32 to Sensor Power
-    ESP -- "3.3V Pin" -->|VCC| DHT
-    ESP -- "GND Pin" -->|GND| DHT
+    ESP -- "3.3V to VCC" --> DHT
+    ESP -- "GND to GND" --> DHT
     
-    ESP -- "3.3V Pin" -->|VCC| BME
-    ESP -- "GND Pin" -->|GND| BME
+    ESP -- "3.3V to VCC" --> BME
+    ESP -- "GND to GND" --> BME
 
     %% Sensor Data Lines
-    ESP -. "GPIO 4" .->|DATA Pin| DHT
-    ESP -. "GPIO 8" .->|SDA Pin| BME
-    ESP -. "GPIO 9" .->|SCL Pin| BME
+    ESP -. "GPIO 4 to DATA" .-> DHT
+    ESP -. "GPIO 8 to SDA" .-> BME
+    ESP -. "GPIO 9 to SCL" .-> BME
 ```
 
 ### ⚠️ Important Power Warning
