@@ -15,3 +15,6 @@ build/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Sensitive Configuration Files
+config.h

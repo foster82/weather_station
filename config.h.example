@@ -1,0 +1,12 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// --- WiFi Settings ---
+#define WIFI_SSID     "YOUR_WIFI_SSID"
+#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD"
+
+// --- MQTT Settings ---
+#define MQTT_SERVER   "192.168.1.xxx"
+#define MQTT_PORT     1883
+
+#endif
