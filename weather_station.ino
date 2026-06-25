@@ -117,6 +117,9 @@ void setup() {
     client.loop();
     delay(500); 
 
+    Serial.println("⏳ Waiting 15 seconds for Serial Monitor debugging...");
+    delay(15000); 
+
     goToSleep();
 }
 
