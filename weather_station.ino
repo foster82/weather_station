@@ -6,7 +6,6 @@
 #include <DHT.h>
 #include "esp_bt.h"      
 #include "esp_wifi.h"    
-#include "driver/adc.h"  
 #include "config.h"      // <-- Imports your private credentials!
 
 #define DHTPIN 4
@@ -77,7 +76,6 @@ void goToSleep() {
     
     WiFi.disconnect(true);
     WiFi.mode(WIFI_OFF);
-    adc_power_off();
     
     esp_sleep_enable_timer_wakeup(TIME_TO_SLEEP * uS_TO_S_FACTOR);
     esp_deep_sleep_start();
